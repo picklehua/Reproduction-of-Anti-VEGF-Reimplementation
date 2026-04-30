@@ -1,0 +1,17 @@
+data/
+output/
+results/
+logs/
+__pycache__/
+*.pyc
+*.pth
+checkpoint/
+data/
+output/
+results/
+logs/
+__pycache__/
+*.pyc
+*.pth
+*.pt
+*.ckpt
