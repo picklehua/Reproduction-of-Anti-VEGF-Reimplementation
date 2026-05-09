@@ -551,7 +551,7 @@ class Cyc_Trainer():
         print(spe)
 
     def democam(self):
-        self.netG_A2B.load_state_dict(torch.load('./checkpoint/Classifier_Short_best_netG_A2B.pth'))
+        self.netG_A2B.load_state_dict(torch.load('./checkpoint/Classifier_Short_best_netG_A2B.pth', map_location='cpu'))
         model_features = []
         netG_A2 = list(self.netG_A2B.children())
         model_features += netG_A2[:-3]
@@ -582,7 +582,7 @@ class Cyc_Trainer():
 
     def demoshap(self):
         index_names = ['Effective', 'Ineffective']
-        self.netG_A2B.load_state_dict(torch.load('./checkpoint/Classifier_Mid_best_netG_A2B.pth'))
+        self.netG_A2B.load_state_dict(torch.load('./checkpoint/Classifier_Mid_best_netG_A2B.pth', map_location='cpu'))
         T = transforms.Compose(self.transforms)
         imagename = sorted(os.listdir('./data/Classifier/Mid-term/before'))
         number = len(imagename)
